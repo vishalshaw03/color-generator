@@ -1,0 +1,259 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.root {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  font-family: 'Syne Mono', monospace;
+}
+
+.main{
+  padding: 40px 0;
+}
+
+.hex-grid {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: rgb(17, 17, 17);
+  z-index: -2;
+}
+
+.hex-grid .grid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("./assets/grid.svg") repeat;
+  background-size: 400px;
+  z-index: -2;
+}
+
+.hex-grid .light {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 20rem;
+  height: 20rem;
+  filter: blur(15px);
+  background: linear-gradient(90deg, #335bf4 0%, #2ae9c9 100%);
+  z-index: -3;
+  animation: move 25s alternate infinite;
+}
+
+@keyframes move {
+  0% {
+    top: -10%;
+    left: -10%;
+  }
+  100% {
+    top: 80%;
+    left: 80%;
+  }
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(22, 22, 22, 0.7) 1%,
+    rgba(15, 8, 8, 0.4),
+    rgba(10, 5, 5, 0.7) 99%
+  );
+}
+
+.root > div {
+  z-index: 2;
+}
+
+.logo{
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 10 !important;
+}
+
+.box-container {
+  border: 1px solid #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: rgba(225, 225, 225, 0.6);
+}
+
+.box-bg {
+  width: 15rem;
+  height: 15rem;
+  filter: drop-shadow(0 0 0.2rem #000);
+  background-color: #fff;
+}
+
+.box {
+  width: 100%;
+  height: 100%;
+  background-color: #209CEEFF;
+}
+
+#color-code{
+  margin-top: 7px;
+}
+
+#color-code, #rgb-code{
+  font-weight: bold;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.right {
+  background-color: rgba(225, 225, 225, 0.7);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.input-container {
+  /* border: 1px solid black; */
+  margin: 20px 0;
+}
+
+.inputs {
+  display: flex;
+  align-items: center;
+}
+
+.inputs input:nth-child(1) {
+  margin: 0 25px 0 0;
+}
+.inputs input:nth-child(2) {
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  padding: 0 0 0 7px;
+  width: 60px;
+  font-weight: 500;
+}
+
+#red-value {
+  color: red;
+}
+
+#green-value {
+  color: green;
+}
+
+#blue-value {
+  color: blue;
+}
+
+#red,
+#green,
+#blue,
+#opacity {
+  border-radius: 8px;
+  height: 10px;
+  width: 100%;
+  outline: none;
+  transition: background 450ms ease-in;
+  -webkit-appearance: none;
+}
+
+#red::-webkit-slider-thumb,
+#green::-webkit-slider-thumb,
+#blue::-webkit-slider-thumb,
+#opacity::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+
+#red {
+  background: linear-gradient(to right, red 0%, red 15%, #fff 15%, #fff 100%);
+}
+
+#red::-webkit-slider-thumb {
+  background: red;
+  border: 1px solid rgb(252, 115, 115);
+}
+
+#green {
+  background: linear-gradient(
+    to right,
+    green 0%,
+    green 60%,
+    #fff 60%,
+    #fff 100%
+  );
+}
+
+#green::-webkit-slider-thumb {
+  background: green;
+  border: 1px solid rgb(0, 255, 0);
+}
+
+#blue {
+  background: linear-gradient(to right, blue 0%, blue 92%, #fff 92%, #fff 100%);
+}
+
+#blue::-webkit-slider-thumb {
+  background: blue;
+  border: 1px solid rgb(0, 100, 255);
+}
+
+#opacity {
+  background: linear-gradient(
+    to right,
+    gray 0%,
+    gray 100%,
+    #fff 100%,
+    #fff 100%
+  );
+}
+
+#opacity::-webkit-slider-thumb {
+  background: gray;
+  border: 1px solid rgb(56, 55, 55);
+}
+
+.opacity-check-label {
+  font-weight: 500;
+  padding-left: 5px;
+}
+
+.more-options {
+  margin-top: 45px;
+  display: flex;
+}
+
+.hex-input-container {
+  width: 200px;
+}
+
+.hex-input-container input {
+  height: 35px;
+  padding: 2px 5px 2px 10px;
+  margin: 0 15px 0 0;
+}
+
+.check-btn {
+  padding: 4px 8px;
+}

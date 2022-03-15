@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--Favicon-->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- Google-Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="./styles.css" />
+
+    <title>Color Generator | GG</title>
+</head>
+
+<body>
+
+    <div class="root">
+        <div class="logo">
+            <img src="./favicon-32x32.png" alt="" />
+        </div>
+        <div class="hex-grid">
+            <div class="grid"></div>
+            <div class="light"></div>
+            <div class="overlay"></div>
+        </div>
+        <div class="container main">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="box-container">
+                        <div class="box-bg">
+                            <div id="box" class="box"></div>
+                        </div>
+
+                        <div class="details">
+                            <div id="color-code">#209CEEFF</div>
+                            <div id="rgb-code">rgba(32, 156, 238, 1)</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2"><br /></div>
+                <div class="col-lg-6 right">
+                    <div class="colors">
+                        <div class="input-container">
+                            <div class="inputs">
+                                <input type="range" id="red" value="32" min="0" max="255">
+                                <input type="number" id="red-value" value="32" min="0" max="255" />
+                            </div>
+                        </div>
+
+                        <div class="input-container">
+                            <div class="inputs">
+                                <input type="range" id="green" value="156" min="0" max="255">
+                                <input type="number" id="green-value" value="156" min="0" max="255" />
+                            </div>
+                        </div>
+
+                        <div class="input-container">
+                            <div class="inputs">
+                                <input type="range" id="blue" value="238" min="0" max="255">
+                                <input type="number" id="blue-value" value="238" min="0" max="255" />
+                            </div>
+                        </div>
+
+                        <div class="input-container">
+                            <div>
+                                <input class="form-check-input" type="checkbox" checked id="opacity-check">
+                                <label class="form-check-label opacity-check-label" for="opacity-check">
+                                    Opacity
+                                </label>
+                            </div>
+                            <div class="inputs">
+                                <input type="range" id="opacity" value="255" min="0" max="255">
+                                <input type="number" id="opacity-value" value="1" min="0" max="1" step="0.01" />
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="more-options">
+                        <div class="input-group hex-input-container">
+                            <input id="hex-code-input" type="text" class="form-control" placeholder="#hexcode"
+                                aria-label="Hex-code" aria-describedby="input-hex-code" value="">
+                        </div>
+                        <div>
+                            <button class="btn btn-outline-success check-btn" id="check-hex-btn">Check</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+<!-- Bootstrap -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+
+<script src="./main.js"></script>
+
+</html>
